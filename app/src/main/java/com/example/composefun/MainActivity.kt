@@ -62,7 +62,7 @@ fun GreetingPreview() {
 }
 
 @Composable
-fun FormScreen(viewModel : FormViewModel = viewModel(), modifier: Modifier) {
+fun FormScreen(viewModel: FormViewModel = viewModel(), modifier: Modifier) {
     val state = viewModel.formState
 
     Column(
@@ -87,7 +87,7 @@ fun FormScreen(viewModel : FormViewModel = viewModel(), modifier: Modifier) {
         OutlinedTextField(
             value = state.email,
             onValueChange = viewModel::onEmailChange,
-            label = { Text("Email")},
+            label = { Text("Email") },
             isError = state.error?.contains("email", true) == true,
             modifier = Modifier.fillMaxWidth()
         )
@@ -95,7 +95,7 @@ fun FormScreen(viewModel : FormViewModel = viewModel(), modifier: Modifier) {
         OutlinedTextField(
             value = state.password,
             onValueChange = viewModel::onPasswordChange,
-            label = { Text("Password")},
+            label = { Text("Password") },
             visualTransformation = PasswordVisualTransformation(),
             isError = state.error?.contains("Password") == true,
             modifier = Modifier.fillMaxWidth()
